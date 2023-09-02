@@ -5,9 +5,34 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp2"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <TextBox HorizontalAlignment="Left" Margin="10,152,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="153" Height="83"/>
+        Title="ArtCalculator" Height="450" Width="800">
+    <Grid RenderTransformOrigin="0.5,0.5">
+        <Grid.RenderTransform>
+            <TransformGroup>
+                <ScaleTransform/>
+                <SkewTransform/>
+                <RotateTransform/>
+                <TranslateTransform X="0" Y="0"/>
+            </TransformGroup>
+        </Grid.RenderTransform>
+        <TextBox x:Name="textbox1" HorizontalAlignment="Left" Margin="35,181,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120" FontSize="14"/>
+        <ComboBox x:Name="combobox1" HorizontalAlignment="Left" Margin="199,181,0,0" VerticalAlignment="Top" Width="120" FontSize="14">
+            <ComboBoxItem Content="+" IsSelected="True"/>
+            <ComboBoxItem Content="-"/>
+            <ComboBoxItem Content="*"/>
+            <ComboBoxItem Content="/"/>
+            <ComboBoxItem Content="%"/>
+        </ComboBox>
+        <TextBox x:Name="textbox2" HorizontalAlignment="Left" Margin="365,181,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120" FontSize="14"/>
+        <Button Content="=" HorizontalAlignment="Left" Margin="530,181,0,0" VerticalAlignment="Top" Click="Button_Click"/>
+        <Label x:Name="label1" Content="0" HorizontalAlignment="Left" Margin="593,181,0,0" VerticalAlignment="Top" FontSize="14" Width="169" Background="{DynamicResource {x:Static SystemColors.WindowBrushKey}}">
+            <Label.BorderBrush>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF8C4747" Offset="1"/>
+                </LinearGradientBrush>
+            </Label.BorderBrush>
+        </Label>
 
     </Grid>
 </Window>
